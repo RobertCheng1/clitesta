@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int add(int a, int b)
+{
+	return a + b;
+}
+
+int main()
+{
+	int a = 3;
+	int b = 4;
+	int ret = 0;
+ 
+        int *pa = &a;
+	printf("*pa = %d\n", *pa);
+
+
+
+        int (*pf)(int a, int b);
+	pf = add;
+ 	//ret = pf(a, b);
+ 	ret = (*pf)(a, b);
+
+	printf("a + b = %d\n", ret);
+	return 0;
+}
